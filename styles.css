@@ -1,0 +1,250 @@
+/* styles.css - Versão Moderno e Confortável para Estudo Prolongado */
+
+/* Paleta de cores suave e moderna */
+:root {
+    --bg-dark: #0f172a;          /* Fundo principal azul-escuro suave */
+    --bg-card: #1e293b;          /* Cards levemente mais claros */
+    --text-primary: #e2e8f0;     /* Texto principal claro e legível */
+    --text-secondary: #cbd5e1;   /* Texto secundário */
+    --accent: #6366f1;           /* Roxo suave inspirado em Crepúsculo (violetas) */
+    --accent-hover: #818cf8;
+    --correct: #10b981;          /* Verde esmeralda suave */
+    --incorrect: #f87171;        /* Vermelho suave */
+    --border: #334155;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.95)), 
+                      url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); /* Floresta noturna suave */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Animação suave de entrada */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.menu, .quiz, .results {
+    max-width: 960px;
+    margin: 40px auto;
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Cabeçalhos */
+h1, h2 {
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 1.5em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Botões modernos */
+button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    margin: 12px 8px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.5);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* Questões */
+.question {
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(30, 41, 59, 0.6);
+    border-radius: 12px;
+    border-left: 5px solid var(--accent);
+    transition: all 0.3s ease;
+}
+
+.question:hover {
+    background: rgba(30, 41, 59, 0.8);
+    transform: translateX(5px);
+}
+
+/* Opções objetivas */
+.objective label {
+    display: block;
+    margin: 12px 0;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: rgba(51, 65, 85, 0.4);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.objective label:hover {
+    background: rgba(99, 102, 241, 0.15);
+    transform: translateX(4px);
+}
+
+/* Textarea discursiva */
+.discursive textarea {
+    width: 100%;
+    height: 140px;
+    background: #1e293b;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 1rem;
+    resize: vertical;
+    margin-top: 10px;
+    transition: border-color 0.3s;
+}
+
+.discursive textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Botão "Não sei" */
+.not-know {
+    color: #94a3b8;
+    font-style: italic;
+    margin-top: 12px;
+    display: inline-block;
+}
+
+/* Feedback de acertos/erros */
+.correct {
+    color: var(--correct);
+    font-weight: 600;
+}
+
+.incorrect {
+    color: var(--incorrect);
+    font-weight: 600;
+}
+
+/* Responsividade aprimorada */
+@media (max-width: 1024px) {
+    .menu, .quiz, .results {
+        max-width: 90%;
+        padding: 30px;
+    }
+
+    h1, h2 {
+        font-size: 1.8rem;
+    }
+
+    button {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    .question {
+        padding: 18px;
+    }
+
+    .discursive textarea {
+        height: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .menu, .quiz, .results {
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1em;
+    }
+
+    button {
+        width: 100%;
+        margin: 10px 0;
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    .question {
+        margin: 20px 0;
+        padding: 15px;
+        border-left-width: 4px;
+    }
+
+    .objective label {
+        margin: 8px 0;
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+
+    .discursive textarea {
+        height: 100px;
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    .not-know {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    h1, h2 {
+        font-size: 1.3rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+
+    .question p {
+        font-size: 0.95rem;
+    }
+
+    .objective label {
+        font-size: 0.9rem;
+    }
+
+    .discursive textarea {
+        height: 90px;
+    }
+}
