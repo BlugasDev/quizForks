@@ -1,0 +1,37 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Crepúsculo: Direito Trabalhista</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="menu" class="menu">
+        <h1>Quiz Crepúsculo: Teste seu Conhecimento em Direito Trabalhista</h1>
+        <p>Bem-vindo ao mundo sombrio de Forks! Escolha o nível de dificuldade como se estivesse enfrentando vampiros ou lobisomens. Sinta o brilho da lua cheia e o mistério da floresta eterna.</p>
+        <button onclick="startQuiz('facil')">Fácil (Como um humano em Forks)</button>
+        <button onclick="startQuiz('medio')">Médio (Como Bella no dilema)</button>
+        <button onclick="startQuiz('dificil')">Difícil (Como enfrentar os Volturi)</button>
+    </div>
+
+    <div id="quiz" class="quiz" style="display: none;">
+        <h2>Quiz em Andamento - A Noite Cai em Forks</h2>
+        <form id="quizForm">
+            <!-- Perguntas serão inseridas aqui via JS -->
+        </form>
+        <button onclick="submitQuiz()">Enviar Respostas - Revelar o Amanhecer</button>
+        <button onclick="backToMenu()">Voltar ao Menu - Fugir para a Floresta</button>
+    </div>
+
+    <div id="results" class="results" style="display: none;">
+        <h2>Resultados - O Veredito dos Cullen</h2>
+        <div id="resultContent"></div>
+        <button onclick="restartQuiz()">Reiniciar Quiz - Nova Lua Cheia</button>
+        <button onclick="backToMenu()">Voltar ao Menu - Retornar a Forks</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
